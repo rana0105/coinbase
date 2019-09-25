@@ -26,4 +26,10 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/update-profile', 'HomeController@updateProfile')->name('update.profile');
+
+});
