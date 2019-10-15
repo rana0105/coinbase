@@ -1,9 +1,18 @@
-@extends('layouts.main')
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-@section('content')
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
  <div class="container" >
-    <h3 class="h3style">Create your account</h3><br>
-    <a class="h3style btn btn-info" href="{{ ('/') }}">Back Home</a>
+    <h3 >Create your account</h3><br>
     <div class="row col-md-12">
       <div class="col-md-3">
       </div>
@@ -41,17 +50,19 @@
             <label class="custom-control-label" for="defaultRegisterFormNewsletter"> <span>By continuing, I certify that I am 18 years of age, and I agree to the<a href="" target="_blank" rel="noopener noreferrer"><span> User Agreement</span></a> and <a href="" target="_blank" rel="noopener noreferrer"><span>Privacy Policy.</span></a>.</span></label>
           </div>
           <button  class="btn btn-primary my-4 btn-block " type="submit">Create account</button>
-          
         </form>
       </div>
       <div class="col-md-3">
 
       </div>
     </div><br>
-    <p >Already have a Coinbaseclub account? <a href="{{ route('login') }}" >Log in</a> </p>
+    <p >Already have a Coinbaseclub account? <a href="login.html" >Log in</a> </p>
   </div>
 
-@endsection
-@section('style')
-<link href="{{ asset('coinbase/css/signup.css') }}" rel="stylesheet">
-@endsection
+ <!-- Optional JavaScript -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

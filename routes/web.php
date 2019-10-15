@@ -11,8 +11,12 @@
 |
  */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
@@ -23,6 +27,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/dashboard', 'AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+    Route::resource('agentcode', 'Admin\AgentCodeController');
 
 });
 
@@ -31,5 +36,4 @@ Route::prefix('admin')->group(function () {
 Route::group(['middleware' => ['web']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/update-profile', 'HomeController@updateProfile')->name('update.profile');
-
 });

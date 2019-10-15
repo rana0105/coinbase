@@ -1,0 +1,62 @@
+body{
+	background: #1652f0;
+	font-family: helvetica neue,Helvetica,Arial,sans-serif;
+}
+h3{
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+	font-size: 25px;
+}
+.navbar-brand{
+	margin-left: 37px;
+	font-weight: bold;
+	font-size: 23px;
+	
+}
+.navbar-collapse{
+	margin-right: 30px;
+	color: white;
+	margin-top: 10px;
+	font-size: 13px;
+	font-weight: bold;
+	margin-right: 60px;
+	text-decoration: none;
+	border-radius: 2px;
+}
+li a{
+	margin-left: 20px;
+	font-size: 14px;
+}
+.sn{
+	border: 2px solid white;
+	margin-left: 30px;
+	height: 40px;
+	text-align: center;
+
+}
+.form-horizontal{
+	height: 220px;
+	width: 400px;
+	background: white;
+	border-radius: 5px;
+	padding-top: 25px;
+	color: #050f19;
+	margin-left: 75px;
+}
+.form-control{
+	height: 55px;
+}
+.custom-checkbox{
+	font-size: 13px;
+}
+.content{
+	text-align: center;
+
+}
+.content a{
+	color: white;
+}
+.btn-sm{
+	margin-left: 48px;
+}

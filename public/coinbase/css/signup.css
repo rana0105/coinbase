@@ -1,0 +1,51 @@
+body{
+	background: #1652f0;
+	font-family: helvetica neue,Helvetica,Arial,sans-serif;
+}
+.container{
+
+}
+.h3style{
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.h5astyle a{
+	text-align: center;
+}
+
+form{
+	height: 550px;
+	width: 470px;
+	background: white;
+	border-radius: 5px;
+	padding: 18px;
+	color: black; 
+	margin-left: 25px;"
+}
+.form-control{
+	height: 60px;
+}
+i{
+	float: right;
+	margin-right: 10px;
+	margin-top: -38px;
+	position: relative;
+	z-index: 2;"
+}
+.btn-block{
+	background: #1652f0;
+	height: 70px; 
+	border:none;"
+}
+p{
+	color: white;
+	font-weight: bold; 
+	text-align: center;
+	padding-right: 40px;
+}
+p a{
+	color: white;
+	font-weight: bold;
+}

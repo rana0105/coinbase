@@ -1,0 +1,259 @@
+
+/*nabbar*/
+
+.navbar{
+	background-color: #1652f0;
+	padding: 16px;
+}
+
+.navbar a{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+.btn1{
+	margin-top:5px; 
+	width: 100px;
+	height: 35px;
+	background-color: #05B169;
+	padding-top:2px;
+	   
+}
+.btn2{
+	margin-top:1px; 
+	width:105px;
+	height:40px;
+	background-color: #05B169;
+}
+
+/*nabbar end*/
+
+/*header start*/
+.header{
+	background-color: #1652f0;
+	height: 600px;
+}
+.header p{
+	font-size: 17px;
+	 color: white;
+	 font-weight: bold;
+}
+.text{
+	margin-top: 120px;
+	font-size: 48px;
+}
+.span{
+color:#AAB7B8;
+}
+.span2{
+color:#05b169;
+}
+ .img{
+ 	margin-top: 10px;
+ 	 width:100px; 
+ 	 height:40px;"
+ }
+
+.form-control{
+	padding-top:10px;
+	 /* margin-left:24px; */
+	  /* width: 320px; */
+	   height: 70px;
+}
+.btn3{
+	padding-top:20px; 
+	margin-top: -98px; 
+	width:140px; 
+	height:70px; 
+    background-color: #05B169;
+	margin-left:350px;
+	border: none;
+}
+
+
+ /*header end */
+
+/*table-chart start*/
+
+.table-chart{
+	background-color: white;
+	margin-top: -180px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+tr{
+  height: 70px;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+.btn4{
+	 width:60px;
+	 height:35px; 
+	 border-radius:5px;
+	 background-color:#05b169;
+	 border:none;
+}
+
+/*@media only screen and (max-width: 600px) {
+ .header{
+	margin-top: 20px;
+	margin-left: -140px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+ .table{
+	margin-top: 30px;
+	margin-left: 10px;
+	margin-right: -120px;
+}
+}*/
+/*table-chart end*/
+
+/*service start*/
+.service{
+	margin-top: 50px;
+}
+.service h3{
+	font-size: 35px;
+}
+.service p{
+	color: black;
+	font-size: 14px;
+}
+.btn5{
+	width: 120px; 
+	height: 45px; 
+	background-color:rgb(22, 82, 240); 
+	border: none;font-size: 14px; 
+	border-radius:5px;"
+}
+.span3{
+
+color:#AAB7B8;
+}
+
+/*service end*/
+
+/*portfolio start*/
+.portfolio{
+margin-top:50px;
+}
+h2{
+	font-size: 38px;
+	color: #0F3256;
+}
+p{
+	font-size: 15px;
+	color: #90A1B8 ;
+}
+img{
+	margin-top:-15px;
+}
+
+/* Portfolio  end */
+
+/* platform Section start*/
+.Platform
+{
+ margin-top:120px;
+}
+h1{
+	font-size: 40px;
+	color: #0F3256;
+}
+p{
+	font-size: 15px;
+	color: #90A1B8 ;
+}
+img{
+	text-align: center;
+}
+a{
+	font-size:14px; 
+	color:blue; 
+	text-decoration:none;
+}
+/* platform Section end*/
+
+/* point Section start*/
+.point{
+background-color:rgb(22, 82, 240);
+ padding:50px;
+ margin-top:70px;
+}
+.point h1{
+	color: white;
+	font-size: 55px;
+}
+
+.point p{
+	font-size: 14px;
+	color: white;
+}
+/* point Section end*/
+
+/* get started Section start*/
+.get-started{
+	margin-top: 60px;
+}
+
+/* get started Section end*/
+
+/*banner Section start */
+
+.banner{
+margin-top:70px;	
+background-color: #E9F6FF;
+}
+.title{
+	margin-top: 150px;
+}
+.btn6{
+width: 120px; 
+height: 45px; 
+background-color:rgb(22, 82, 240); 
+border: none;
+font-size: 14px; 
+border-radius:5px;
+}
+.banner img{
+	margin-top:10px;
+	
+}
+/*banner Section end */
+
+/*Footer start*/ 
+.footer{
+	margin-top: 50px;
+	margin-bottom: 90px;
+
+}
+.footer h5{
+	color:blue;
+	font-size: 25px;
+}
+.footer p{
+	color:#909497;
+}
+.footer p a{
+color:#909497;
+}
+
+.text-color a{
+	color:#909497;
+	font-size: 16px;
+}
+/*Footer end*/ 
