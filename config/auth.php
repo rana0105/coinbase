@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'agentlogin' => [
+            'driver' => 'session',
+            'provider' => 'agentlogins',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -77,6 +81,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+
+        'agentlogins' => [
+            'driver' => 'eloquent',
+            'model' => App\Agentlogin::class,
         ],
 
         // 'users' => [

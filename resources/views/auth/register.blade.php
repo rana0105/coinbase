@@ -8,31 +8,105 @@
       <div class="col-md-3">
       </div>
       <div class="col-md-6">
-        <form class="form-horizontal col-md-12"  action="#!" >
-
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>First name</label>
-                <input type="text" class="form-control" placeholder="First name"  >
+        <form class="form-horizontal col-md-12"  form method="POST" action="{{ route('register') }}" >
+           @csrf
+           <div class="form-group">
+            @if ($message = Session::get('warning'))
+              <div class="alert alert-warning">
+                  <p style="color: red;">{{ $message }}</p>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Last name</label>
-                <input type="text" class="form-control" placeholder="Last name" >
-              </div>
-            </div>
+            @endif
           </div>
-
+          <div class="form-group">
+            <label>Name</label>
+            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Enter your Name">
+                
+            @error('name')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email address" name="email" >
+            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Enter your email address">
+                
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
           </div>
           <div class="form-group">
-            <label for="email">Password</label>
+            <label for="mobile">Mobile</label>
+            <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus placeholder="Enter your mobile number">
+                
+            @error('mobile')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
+          <div class="form-group">
+            <label for="usercode">Ref: Code</label>
+            <input id="usercode" type="hidden" readonly="" class="form-control @error('usercode') is-invalid @enderror" name="usercode" value="{{ $usercode }}" required autocomplete="usercode" autofocus placeholder="Enter your ref: code">
+
+            <input id="refcode" type="text"  class="form-control @error('refcode') is-invalid @enderror" name="refcode" value="" required autocomplete="refcode" autofocus placeholder="Enter your ref: code">
+                
+            @error('usercode')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+            @error('refcode')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
+          <div class="form-group">
+            <label for="email">Agent Code</label>
+            <select id="agentcode" type="text" class="form-control @error('agentcode') is-invalid @enderror" name="agentcode" value="{{ old('agentcode') }}" required autocomplete="agentcode" autofocus>
+              <option value="">--Select Agent Code--</option>
+              @foreach($agentcode as $agent)
+              <option value="{{ $agent->agentcode }}">{{ $agent->agentcode }}</option>
+              @endforeach
+            </select>
+                
+            @error('agentcode')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
+          <div class="form-group">
+            <label for="email">Country</label>
+            <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus placeholder="Enter your country">
+                
+                @error('country')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
             
-            <input type="password" class="form-control" placeholder="Choose a password"  id="myInput" ><i  class="fa fa-eye" onclick="myFunction()"></i>
+            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+                </span>
+                @enderror<i  class="fa fa-eye" onclick="myFunction()"></i>
+            
+          </div>
+
+          <div class="form-group">
+            <label for="password_confirmation">Confirm Password</label>
+            
+             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password"><i  class="fa fa-eye" onclick="myFunction()"></i>
             
           </div><br>
 

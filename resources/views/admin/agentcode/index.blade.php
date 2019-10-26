@@ -4,6 +4,11 @@
       <div class="row">
         <div class="col-md-6">
           <a href="{{ route('agentcode.create') }}">Add</a>
+          @if ($message = Session::get('success'))
+          <div class="alert alert-success">
+              <p>{{ $message }}</p>
+          </div>
+          @endif
         </div>
       </div>
       <div class="row">
@@ -11,16 +16,22 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>Title</th>
-              <th>Code</th>
+              <th>Name</th>
+              <th>Mobile</th>
+              <th>Email</th>
+              <th>Agent Code</th>
             </tr>
           </thead>
           <tbody>
+            @foreach($agentcodes as $key => $agent)
             <tr>
-              <td>01</td>
-              <td>Test</td>
-              <td>0101</td>
+              <td>{{ ++$key }}</td>
+              <td>{{ $agent->name }}</td>
+              <td>{{ $agent->mobile }}</td>
+              <td>{{ $agent->email }}</td>
+              <td>{{ $agent->agentcode }}</td>
             </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

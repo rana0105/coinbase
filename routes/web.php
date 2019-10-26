@@ -31,9 +31,18 @@ Route::prefix('admin')->group(function () {
 
 });
 
+// agent login route for dashboard
+Route::prefix('agent')->group(function () {
+    Route::get('/login', 'Auth\AgentLoginController@showLoginForm')->name('agent.login');
+    Route::post('/login', 'Auth\AgentLoginController@login')->name('agent.login.submit');
+    Route::get('/dashboard', 'AgentController@index')->name('agent.dashboard');
+    Route::get('/logout', 'Auth\AgentLoginController@logout')->name('agent.logout');
+
+});
+
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/update-profile', 'HomeController@updateProfile')->name('update.profile');
+    Route::get('dashboard', 'HomeController@index')->name('dashboard');
+    Route::get('update-profile', 'HomeController@getUpdateProfile')->name('get.update.profile');
 });

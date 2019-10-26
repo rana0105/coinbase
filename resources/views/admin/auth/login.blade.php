@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Coin Base</title>
+    <title>Coin Base Club</title>
 
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,7 +19,7 @@
     <link href="{{ asset('adminPanel/css/sb-admin.css') }}" rel="stylesheet">
     <style>
         .sytle-bac {
-            background-color: #00e676;
+            background-color: #007bff;
         }
 
         .btn-primary {
@@ -46,7 +46,7 @@
   <body class="sytle-bac">    
 
     <div class="container">
-      <h4 class="hstyle">Coin Base</h4>
+      <h4 class="hstyle">Coin Base Club</h4>
       <h6 class="h6style">Admin Login</h6>
       <div class="row">
         <div class="col-md-4">
@@ -74,25 +74,6 @@
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <div class="checkbox">
-                        <label style="font-size: 13px;">
-                          <input type="checkbox" value="remember-me">
-                          Remember Password
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <div class="text-right">
-                        {{-- <a class="d-block small" href="{{ route('password.request') }}">Forgot Password?</a> --}}
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     <i class="fas fa-sign-in-alt"></i> {{ __('Login') }}

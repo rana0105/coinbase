@@ -3,7 +3,7 @@
     
 
 <!--   nabbar start -->
-    <nav  class="navbar navbar-expand-lg navbar-light fixed-top " >
+  <nav  class="navbar navbar-expand-lg navbar-light fixed-top " >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,11 +18,11 @@
       </li>
       <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;
       <li class="nav-item">
-        <a class="nav-link text-white " href="#">Company</a>
+        <a class="nav-link text-white" href="{{ url('agent/login') }}">Agent Login</a>
       </li>
       <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;
       <li class="nav-item">
-        <a class="nav-link text-white" href="#">Earn cropty</a>
+        <a class="nav-link text-white" href="{{ url('admin/login') }}">Admin Login</a>
       </li>&nbsp;&nbsp;&nbsp;
       <button class="btn btn-success btn1 text-center">up to$130</button>
     </ul>
@@ -51,271 +51,38 @@
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5">Coinbase is the easiest place to buy, sell, and manage your cryptocurrency portfolio.</p>
            <input type="text" placeholder=" Email Address" class="form-control" name="search">
-          <a class="btn btn-success btn3" href="signup.html">Get started</a>
+          <a class="btn btn-success btn3" href="{{ route('register') }}">Get started</a>
         </div>
       </div>
     </div>
   </header>
    <!-- header end -->
 
-<!-- table chart start -->
-<div class="container table-chart">
-      <div class="row" class="box effect4" >
-      <table class="table" >
-  <thead class="text-muted">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col"> Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Change</th>
-      <th scope="col">Chart</th>
-      <th scope="col">Trade</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Bitcoin &nbsp;&nbsp;<span class="span">BTC</span></td>
-      <td>BDT 689,305.37</td>
-      <td><span class="span2">+2.35%</span></td>
-      <td><img class="img" src="img/11.png"></td>
-      <td><button class="btn-success btn4">Buy</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Ethereum &nbsp;&nbsp;<span class="span">ETH</span></td>
-      <td>BDT 14,623.46</td>
-      <td><span class="span2">+1.09%</span></td>
-      <td><img class="img"src="img/11.png" ></td>
-      <td><button class="btn-success btn4">Buy</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Bitcoin  &nbsp;&nbsp;<span class="span">BCH</span></td>
-      <td>BDT 18,630.63</td>
-      <td><span class="span2">+1.09%</span></td>
-      <td><img class="img" src="img/11.png" ></td>
-      <td><button class="btn-success btn4">Buy</button></td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Litecon &nbsp;&nbsp;<span class="span">LTC</span></td>
-      <td>BDT 4,674.26</td>
-      <td><span class="span2">+1.09%</span></td>
-      <td><img class="img" src="img/11.png"></td>
-      <td><button class="btn-success btn4">Buy</button></td>
-    </tr>
-    
-  </tbody>
-</table>
-    </div>
-</div>
-<!-- table chart end -->
-
-<!-- Services Section start -->
-<section class="service" >
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <b><h3>Earn up to $130 worth of crypto</h3></b>
-        <p>Discover how specific cryptocurrencies work — and get a bit of each crypto to try out for yourself.</p>
-        <button class=" btn-primary btn5">Start earning</button>
-      </div>
-      <div class="col-md-2">
-      </div>
-      <div class="col-md-6">
-       <table class="table">
-        <tbody >
-          <tr>
-            <td>Dai &nbsp;&nbsp; <span class="span3">DAI</span></td>
-            <td></td><td></td><td></td>
-            <td><span style="color:#05b169;">Earn $20 DAI</span></td>
-          </tr>
-
-          <tr>
-           <td>EOS &nbsp;&nbsp;<span class="span3" >EOS</span></td>
-           <td></td><td></td><td></td>
-           <td><span style="color:#05b169;">Earn $50 EOS</span></td>
-         </tr>
-
-         <tr>
-           <td>Stellar Lumens &nbsp;&nbsp;<span class="span3" >XLM</span></td>
-           <td></td><td></td><td></td>
-           <td><span style="color:#05b169;">Earn $50 XLM</span></td>
-         </tr>
-
-         <tr>
-           <td>BAT&nbsp;&nbsp;<span class="span3" >BAT</span></td>
-           <td></td><td></td><td></td>
-           <td><span style="color:#05b169;">Earn $10 BAT</span></td>
-         </tr>
-
-       </tbody>
-     </table>
-   </div>
- </div>
-</div>
-</section>
-<!-- services end -->
-
-
-
-<!-- Portfolio Section -->
-  <section class="portfolio">
-    <div class="container" >
-      <center><h2>Create your cryptocurrency portfolio today</h2></center><br>
-      <center><p>Coinbaseclub has a variety of features that make it the best place to start trading</p></center><br><br>
-      <div class="row ">
-      <div class="col-md-5 ">
-        <div class="row">
-         <div class="col-md-4">
-        <img src="img/1.png" >
-
-       </div> 
-       <div class="col-md-8">
-        <h5>Manage your portfolio</h5>
-       <p>Buy and sell popular digital currencies, keep track of them in the one place.</p>
-       </div>
-       <div class="col-md-4">
-         <img src="img/2.png">
-
-       </div>
-       <div class="col-md-8">
-         <h5>Recurring buys</h5>
-       <p>Invest in cryptocurrency slowly over time by scheduling buys daily, weekly, or monthly.</p>
-
-       </div> 
-       <div class="col-md-4">
-        <img src="img/3.png">
-
-       </div> 
-       <div class="col-md-8">
-        <h5>Vault protection</h5>
-       <p >For added security, store your funds in a vault with time delayed withdrawals.</p>
-       </div>
-       <div class="col-md-4">
-        <img src="img/4.png">
-
-       </div> 
-       <div class="col-md-8">
-        <h5>Mobile apps</h5>
-       <p>Stay on top of the markets with the Coinbase app for Android or iOS.</p>
-       </div>
-        </div>
-      </div>
-      <div class="col-md-7">
-     <img src="img/pic.png">
-      </div>
-      </div>
-    </div>
-  </section>
-<!-- Portfolio Section end -->
-  
-<!-- Platform Section start -->
-  <section class="Platform" >
-    <div class="container text-center">
-      <h1>The most trusted cryptocurrency platform</h1><br>
-      <p>Here are a few reasons why you should choose Coinbase</p>
-      <div class="row">
-        </div><br><br><br>
-         <div class="row justify-content-center">
-        <div class=" col-md-4">
-          <img src="img/5.png" width="180px" height="150px;">
-          <br>
-          <h5>Secure storage</h5><br>
-          <p >We store the vast majority of the digital assets in secure offline storage.</p>
-          <a href="">Learn more <b>>></b></a>
-        </div>
-        <div class=" col-md-4">
-          <img src="img/6.png"width="180px" height="150px;">
-          <br>
-          <h5>Protected by insurance</h5><br>
-          <p>Cryptocurrency stored on our servers is covered by our insurance policy.</p>
-          <a href="">Learn more <b>>></b></a>
-        </div>
-        <div class=" col-md-4">
-          <img src="img/7.png"width="180px" height="150px;">
-          <br>
-          <h5>Industry best practices</h5><br>
-          <p>Coinbase supports a variety of the most popular digital currencies.</p>
-          <a href="">Learn more <b>>></b></a>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- Platform Section end -->
-
-<!-- point Section -->
-   <section class="point">
-    <div class="container-fluid">
-      <div class="container">
-      <div class="row justify-content-center">
-  <div class="col-md-4 text-right ">
-    <h1><strong>$150B+</strong></h1>
-    <p>Cryptocurrency exchanged</p>
-  </div>
- <div class="col-md-4 text-center">
-   <h1><strong>$102+</strong></h1>
-    <p>Countries supported</p>
-  </div>
- <div class="col-md-4 text-left">
-   <h1><strong>$30M++</strong></h1>
-    <p>Cryptocurrency exchanged</p>
-  </div>
-
-    </div>
-      </div>
-    </div>
-  </section>
-<!-- point Section end -->
-  
 <!-- Get stared -->
 
-    <section class="get-started">
-    <div class="container text-center">
-        <h2>Get started in a few minutes</h2>
-          <p>Coinbase supports a variety of the most popular digital currencies.</p>
-      <br><br>
-         <div class="row justify-content-center">
-        <div class="col-md-4 text-center">
-         <img src="img/8.png" width="90px" height="90px;">
-         <h5>Create an account</h5>
-        </div>
-      <div class="col-md-4 text-center">
-         <img src="img/9.png" width="90px" height="90px;">
-         <h5>Link your bank account</h5>
-        </div>
-        <div class="col-md-4 text-center">
-          <img src="img/10.png" width="90px" height="90px;">
-          <h5>Start buying & selling</h5>
-        </div>     
-</div>
-</div>
+<section class="get-started">
+          <div class="container text-center">
+              <h2>Get started in a few minutes</h2>
+                <p>Coinbase supports a variety of the most popular digital currencies.</p>
+            <br><br>
+               <div class="row justify-content-center">
+              <div class="col-md-4 text-center">
+               <img src="{{ asset('coinbase/img/8.PNG') }}" width="90px" height="90px;">
+               <h5>Create an account</h5>
+              </div>
+            <div class="col-md-4 text-center">
+               <img src="{{ ('coinbase/img/9.PNG') }}" width="90px" height="90px;">
+               <h5>Link your bank account</h5>
+              </div>
+              <div class="col-md-4 text-center">
+                <img src="{{ ('coinbase/img/10.PNG') }}" width="90px" height="90px;">
+                <h5>Start buying & selling</h5>
+              </div>     
+      </div>
+      </div>
 </section>
 <!-- Get stared end -->
 
-<!-- banner Section start  -->
-
-<section class="banner">
-    <div class="container-fluid">
-      <div class="container">
-      <div class="row">
-      <div class="col-md-4 title">
-        <b><h3>Earn up to $130 worth of crypto</h3></b>
-     <p>Discover how specific cryptocurrencies work — and get a bit of each crypto to try out for yourself.</p>
-     <button class=" btn-primary btn6">Start earning</button>
-        </div>
-        <div  class="col-md-2">
-        </div>
-       <div class="col-md-6">
-        <img src="img/pic2.png">
-       </div>
-
-      </div>
-      </div>
-    </div>
-  </section>
-<!-- banner Section end  -->
 
 <!-- Footer -->
   <footer class="bg-white py-3 footer" >
