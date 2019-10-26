@@ -41,7 +41,8 @@
           <div class="form-group">
             <label for="email">Agent Code</label>
             <input id="agentcode" type="text" readonly="" class="form-control @error('agentcode') is-invalid @enderror" name="agentcode" value="{{ $agentcode }}" required autocomplete="agentcode" autofocus placeholder="Enter your ref: code">
-                
+
+            <input id="roleid" type="hidden" readonly="" class="form-control @error('roleid') is-invalid @enderror" name="roleid" value="2" required autocomplete="roleid" autofocus placeholder="Enter your ref: code">
             @error('agentcode')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>

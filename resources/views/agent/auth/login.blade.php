@@ -55,14 +55,14 @@
         <div class="col-md-4">
           <div class="card card-login mx-auto mt-5">
             <div class="card-body" style="margin-top:3%;">
-              <form method="POST" action="{{ route('agent.login.submit') }}" aria-label="{{ __('Login') }}">
+              <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                     @csrf
                 <div class="form-group">
-                    <input id="agentcode" type="agentcode" class="form-control{{ $errors->has('agentcode') ? ' is-invalid' : '' }}" name="agentcode" value="{{ old('agentcode') }}" required autofocus placeholder="Agent code">
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus placeholder="Agent code">
 
-                    @if ($errors->has('agentcode'))
+                    @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('agentcode') }}</strong>
+                            <strong>{{ $errors->first('email') }}</strong>
                         </span>
                     @endif
                 </div>

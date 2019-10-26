@@ -17,13 +17,13 @@
         <a class="nav-link text-white" href="#">Products</a>
       </li>
       <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link text-white" href="{{ url('agent/login') }}">Agent Login</a>
       </li>
       <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;
       <li class="nav-item">
         <a class="nav-link text-white" href="{{ url('admin/login') }}">Admin Login</a>
-      </li>&nbsp;&nbsp;&nbsp;
+      </li>&nbsp;&nbsp;&nbsp; --}}
       <button class="btn btn-success btn1 text-center">up to$130</button>
     </ul>
     <form class="form-inline my-2 my-lg-0">

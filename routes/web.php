@@ -43,6 +43,7 @@ Route::prefix('agent')->group(function () {
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get('/agent/dashboard', 'AgentController@index')->name('agent.dashboard');
     Route::get('dashboard', 'HomeController@index')->name('dashboard');
     Route::get('update-profile', 'HomeController@getUpdateProfile')->name('get.update.profile');
 });

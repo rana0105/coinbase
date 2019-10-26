@@ -22,18 +22,21 @@
       </li>&nbsp;&nbsp;&nbsp;
     </ul>
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown no-arrow">
-          <a class="nav-link text-white dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw">Agent</i>
+      <li class="nav-item dropdown no-arrow">
+      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ Auth::user()->name }} <span class="caret"></span>
           </a>
-          <div class="dropdown-menu bgstyle dropdown-menu-right" aria-labelledby="userDropdown">
-          {{-- <a class="dropdown-item" href="#">Settings</a> --}}
-          <div class="dropdown-divider"></div>
-            <a class="dropdown-item font-weight-medium" href="{{ route('agent.logout') }}">
-              <i class="fa fa-lock"></i>
-              Logout
-            </a>
-          </div>
+          
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+          </a>
+          
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
       </li>
     </ul>
   </div>

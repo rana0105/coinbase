@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Agentlogin;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +18,7 @@ class AgentCodeController extends Controller
      */
     public function index()
     {
-        $agentcodes = Agentlogin::all();
+        $agentcodes = User::where('roleid', 2)->get();
         return view('admin.agentcode.index', compact('agentcodes'));
     }
 
@@ -39,29 +40,12 @@ class AgentCodeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     dd($request->all());
-    //     $checkAgentcode = Agentlogin::where('agentcode', $request->agentcode)->first();
-    //     if ($checkAgentcode == null) {
-    //         Agentlogin::create($request->all());
-    //         return redirect()->route('agentcode.index')->with('success', 'Agent code have been save');
-    //     }
-    //     return redirect()->route('agentcode.create')->with('success', 'Agent code already exists!');
-    // }
 
     public function store(Request $request)
     {
         $this->validator($request->all())->validate();
 
-        // event(new Registered($user = $this->create($request->all())));
-
-        // $this->guard()->login($user);
-
-        // return $this->registered($request, $user)
-        //                 ?: redirect($this->redirectPath());
-
-        $checkAgentcode = Agentlogin::where('agentcode', $request->agentcode)->first();
+        $checkAgentcode = User::where('agentcode', $request->agentcode)->first();
         if ($checkAgentcode == null) {
 
             $user = $this->insertdata($request->all());
@@ -75,8 +59,8 @@ class AgentCodeController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:agentlogins'],
-            'agentcode' => ['required', 'string', 'max:255', 'unique:agentlogins'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'agentcode' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -89,11 +73,12 @@ class AgentCodeController extends Controller
      */
     protected function insertdata(array $data)
     {
-        return Agentlogin::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'mobile' => $data['mobile'],
             'agentcode' => $data['agentcode'],
+            'roleid' => $data['roleid'],
             'password' => Hash::make($data['password']),
         ]);
     }

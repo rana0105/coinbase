@@ -66,7 +66,7 @@
           </div>
           <div class="form-group">
             <label for="email">Agent Code</label>
-            <select id="agentcode" type="text" class="form-control @error('agentcode') is-invalid @enderror" name="agentcode" value="{{ old('agentcode') }}" required autocomplete="agentcode" autofocus>
+            <select id="useragentcode" type="text" class="form-control @error('useragentcode') is-invalid @enderror" name="useragentcode" value="{{ old('useragentcode') }}" required autocomplete="useragentcode" autofocus>
               <option value="">--Select Agent Code--</option>
               @foreach($agentcode as $agent)
               <option value="{{ $agent->agentcode }}">{{ $agent->agentcode }}</option>
