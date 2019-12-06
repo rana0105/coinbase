@@ -31,8 +31,8 @@
 
 /*header start*/
 .header{
-	background-color: #1652f0;
-	height: 600px;
+	
+	height: 470px;
 }
 .header p{
 	font-size: 17px;
@@ -72,11 +72,11 @@ color:#05b169;
 }
 
 tr.trstyle {
-	background-color: #d3d6d6;
+	background-color: bisque;
 }
 
 tr.tablestyle {
-    background-color: #cbe2cb;
+    background-color:bisque;
 }
 
 .boxstyle {

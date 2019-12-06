@@ -4,7 +4,7 @@
     {{-- <h3 class="h3style">Create your account</h3><br> --}}
     <div class="row col-md-12">
       <div class="col-md-3 boxstyle">
-        <h4 style="color:green">Admin Amount:- {{ $checkAdminAmount ? $checkAdminAmount->adminamount : '0000'}}</h4>
+        <h4 style="color:black"><u>My Wallet</u> <br><br><button class="btn btn-info"> {{ $checkAdminAmount ? $checkAdminAmount->adminamount : '0000'}}</button></h4>
         @if ($message = Session::get('success'))
           <div class="alert alert-success">
               <p>{{ $message }}</p>
@@ -15,7 +15,7 @@
         <form class="form-horizontal col-md-12"  form method="POST" action="{{ route('admin.fund.store') }}" >
            @csrf
           <div class="form-group">
-            <label for="email">Amount</label>
+            <label for="email"> Added Fund Amount</label>
             <input id="amount" type="number" class="form-control @error('amount') is-invalid @enderror" name="adminamount" value="" required autocomplete="amount" placeholder="Enter your amount">
             @if($checkAdminAmount != null)
             <input id="amount" type="hidden"  name="id" value="{{ $checkAdminAmount->id }}">
@@ -36,9 +36,9 @@
       <div class="col-md-4"></div>
       <div class="col-md-4 boxstyle">
         <table class="table" >
-        <h4 style="color: green">Admin Fund History</h4>
+        <h4 >My Fund History</h4><br>
           <thead class="text-muted">
-            <tr>
+            <tr style="background-color:bisque">
               <th>#</th>
               <th>Amount</th>
               <th>Date</th>
@@ -49,7 +49,7 @@
               <tr>
                 <td>{{ ++$key }}</td>
                 <td>{{ $admin->adminamount }}</td>
-                <td style="color:green;"><b>{{ date('d-M-Y', strtotime($admin->created_at)) }}</b></td>
+                <td >{{ date('d-M-Y', strtotime($admin->created_at)) }}</td>
               </tr>
               @endforeach
           </tbody>

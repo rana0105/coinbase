@@ -346,6 +346,7 @@ class AgentCodeController extends Controller
 
         $betHold = collect($betEarn);
 
+        // return view('admin.agentcode.betHold', compact('betHold'));
         return view('admin.agentcode.betHold', compact('betHold'));
     }
 
@@ -408,9 +409,12 @@ class AgentCodeController extends Controller
                 ->get();
         }else{
             $betWinHistory = BetWin::orderBy('created_at', 'desc')
-                ->get();
+                        
+                   ->get();
         }
         
+      //  dd($betWinHistory);
+
         return view('admin.agentcode.betWinHistory', compact('betWinHistory'));
     }
 
@@ -446,5 +450,19 @@ class AgentCodeController extends Controller
         $withdraws->update(['status' => $request->status]);
         
         return redirect()->route('withdraw.history')->with('success', 'Data Update');
+    }
+
+    public function betwins(){
+
+
+    $betWins=DB::table('bet_wins')
+             ->join('bet_tables','bet_tables.id','=','bet_wins.betid')
+             ->select('bet_wins.*', 'bet_tables.name', 'bet_wins.created_at')
+             ->select('bet_tables.name','bet_wins.created_at', DB::raw('sum(bcount) as totalbet'),DB::raw('sum(bamount) as totalbetamount'))
+             ->groupBy('bet_tables.name', 'bet_wins.created_at') 
+             ->orderBy('created_at', 'desc')
+             ->get();
+
+        return view('admin.agentcode.betwins',compact('betWins'));
     }
 }

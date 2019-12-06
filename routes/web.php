@@ -48,6 +48,8 @@ Route::prefix('admin')->group(function () {
 
     Route::get('bet-hold-history', 'Admin\AgentCodeController@betHoldHistory')->name('bet.hold.history');
 
+    Route::get('bet-wins', 'Admin\AgentCodeController@betwins')->name('bet.wins');
+
     Route::post('bet-hold-history', 'Admin\AgentCodeController@betHoldWin')->name('bet.win');
 
     Route::any('bet-win-history', 'Admin\AgentCodeController@betWinHistory')->name('bet.win.history');

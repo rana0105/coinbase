@@ -2,8 +2,21 @@
 
 @section('content')
 
+<style>
+@media only screen and (min-width: 600px) {
+  .mobile{
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .destop{
+    display: none;
+  }
+}
+</style>
+
   <nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color" >
-    <a class="navbar-brand" href="{{ ('/') }}">coinbaseclub</a>
+    <a class="navbar-brand" href="{{ ('/') }}" style="font-size:25px;">coinbaseclub</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
     aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,10 +26,10 @@
     <ul class="navbar-nav ml-auto">
 
       <li class="nav-item">
-        <a class="nav-link text-white" href="#"> Help</a>
+        <a class="nav-link text-white" href="https://support.coinbase.com/"> Help</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#">Price</a>
+        <a class="nav-link text-white" href="https://www.coinbase.com/price">Price</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="{{ route('login') }}">Sign In</a>
@@ -30,15 +43,21 @@
 
 <div class="container">
   <h3 >Sign in to Coinbaseclub</h3><br>
-  <div class="row col-md-12">
+
+
+
+
+
+
+  <div class="row destop">
     <div class="col-md-3">
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 ">
       <form class="form-horizontal col-md-12"  method="POST" action="{{ route('login') }}">
         @csrf
         <div class="form-group">
-          <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus placeholder="Input correct mobile Id">
+          <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus placeholder="Mobile No">
 
           @error('mobile')
               <span class="invalid-feedback" role="alert">
@@ -47,7 +66,7 @@
           @enderror
         </div>
         <div class="form-group">
-          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Input correct password">
+          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
 
           @error('password')
               <span class="invalid-feedback" role="alert">
@@ -57,7 +76,7 @@
         </div>
         <div class="custom-control custom-checkbox">
          <label> <input type="checkbox" name="remember"> Keep me signed in on this computer</label>
-         <button  class="btn btn-primary btn-sm pull-right" type="submit">SIGN IN </button>
+          &nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary  pull-right" type="submit"> SIGN IN </button>
        </div>
      </form>
    </div>
@@ -66,6 +85,50 @@
    </div>
 
  </div>
+
+
+
+ <div class="row mobile">
+
+    <div class="col-sm-12 " style="margin-left:-90px;">
+      <form class="form-horizontal col-md-12"  method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="form-group">
+          <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus placeholder="Mobile No">
+
+          @error('mobile')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
+        </div>
+        <div class="form-group">
+          <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+
+          @error('password')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
+        </div>
+        <div class="custom-control custom-checkbox">
+         <label> <input type="checkbox" name="remember"> Keep me signed in on this computer</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;<button  class="btn btn-primary  pull-right" type="submit"> SIGN IN </button>
+       </div>
+     </form>
+   </div>
+
+ </div>
+
+
+
+
+
+
+
+
+
+
  <br>
  <div class="content" ><a  href="">Forgot password? </a> <a href="{{ route('register') }}">Don't have an account'?</a>
  @endsection

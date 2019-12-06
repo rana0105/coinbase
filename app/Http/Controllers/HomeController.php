@@ -154,17 +154,20 @@ class HomeController extends Controller
 
     public function withdrawAmount(Request $request)
     {
+         // dd($request->all());
+
         $agent = User::where('agentcode', Auth::user()->useragentcode)->first();
 
         $checkClientFund = AgenttoClientfund::where('to_client', Auth::user()->id)->first();
 
-        if ($checkClientFund->amount > $request->withdrawamount) {
+        if ($checkClientFund->amount > $request->withdrawamount && Hash::check($request->password,$agent->password)) {
             
             $withdraw = new ClientWithdraw;
-
             $withdraw->agentid = $agent->id;
             $withdraw->clientid = Auth::user()->id;
             $withdraw->withdrawamount = $request->withdrawamount;
+            $withdraw->payment = $request->payment;
+            $withdraw->number = $request->number;
             $withdraw->actualamount = $request->withdrawamount - ($request->withdrawamount * .1);
             $withdraw->chargeamount = ($request->withdrawamount * .1);
 
@@ -175,7 +178,7 @@ class HomeController extends Controller
             }
 
         }else{
-            return redirect()->route('dashboard')->with('success', 'Amount Not available');
+            return redirect()->route('dashboard')->with('success', 'Amount Not available Or Wrong Password');
         }
 
     }

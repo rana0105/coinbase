@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('mobile')->unique()->nullable();
             $table->string('usercode')->unique()->nullable();
+            $table->string('refcode')->nullable();
             $table->string('useragentcode')->nullable();
             $table->string('agentcode')->unique()->nullable();
             $table->string('country')->nullable();

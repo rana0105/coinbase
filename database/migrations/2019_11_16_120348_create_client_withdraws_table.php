@@ -18,6 +18,8 @@ class CreateClientWithdrawsTable extends Migration
             $table->integer('agentid')->nullable();
             $table->integer('clientid')->nullable();
             $table->integer('withdrawamount')->nullable();
+            $table->string('payment')->nullable();
+            $table->string('number')->nullable();
             $table->integer('actualamount')->nullable();
             $table->integer('chargeamount')->nullable();
             $table->boolean('status')->default(0)->nullable();

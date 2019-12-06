@@ -7,26 +7,34 @@
 </div>
 @endif    
 
-<!-- Services Section start -->
 <section class="service" style="margin-top: 100px;">
   <div class="container">
+      <br>
     <div class="row">
       <div class="col-md-4">
         <div class="card">
-          <img src="{{ asset('/coinbase/client/'. $updateProfile->profileimage) }}" alt="John" style="width:100%">
+          @if($updateProfile->profileimage=='')
+          <img src="{{ asset('public/coinbase/img/user.png') }}" alt="picture" style="width:100%">
+          <br>
+          @else
+          <img src="{{ asset('/coinbase/client/'. $updateProfile->profileimage) }}" alt="picture" style="width:100%">
+          @endif
+          <br>
           <h3>{{ $updateProfile->usercode }}</h3>
           <h3>{{ $updateProfile->name }}</h3>
           <h6>{{ $updateProfile->mobile }}</h6>
           <h6>{{ $updateProfile->email }}</h6>
-         {{--  <p><a type="" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Update Prodfile --}}
 </a></p>
 
         </div>
+        <br>
       </div>
+     
       <div class="col-md-2">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 boxstyle">
+          <h4>Profile Update</h4>
+          <br>
         <form action="{{ route('profileUpdate') }}" method="POST" enctype="multipart/form-data" file="true">
           @csrf
           <div class="form-group">
@@ -38,11 +46,14 @@
           <div class="form-group">
             <input type="file" class="form-control" name="profileimage">
           </div>
-          <div class="form-group">
-            <button class="btn btn-success">Update</button>
+          <div class="form-group col-md-3">
+            <button class="btn btn-outline-secondary">Update</button>
           </div>
         </form>
-        
+        <hr>
+        <h4>Change Password</h4>
+        <br>
+
         <form action="{{ route('passwordUpdate') }}" method="POST">
           @csrf
           @if (session('error'))
@@ -79,44 +90,79 @@
                 </span>
             @endif
           </div>
-          <div class="form-group">
-            <button class="btn btn-success">Update</button>
-      </div>
+          <div class="form-group col-md-3">
+              <button class="btn btn-outline-secondary">Update</button>
+            </div>
  </div>
 </div>
 </section>
 <!-- services end -->
+<br><br>
+<?php
+$i=1;
+    $ref=DB::table('users')
+         ->where('users.refcode',Auth::user()->usercode)
+         ->get();
+//dd();
+?>
+ <div class="container">
+    <div class="row">
+    
+      <div class="col-md-2">
+      </div>
+        <div class="col-md-8">
+            <h4>My All Referrer</h4><br>
+            <table class="table table-striped">
+                <thead>
+                  <tr style="background-color:bisque">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Ref Code</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach($ref as $ref)
+                  <tr>
+                    <th>{{ $i++ }}</th>
+                    <td>{{ $ref->name }}</td>
+                    <td>{{ $ref->usercode }}</td>
+                  </tr>
+                  @endforeach
+                </tbody>
+              </table>
+    </div>
+    <div class="col-md-2">
+      </div>
+  </div>
+  </div>
 
 <!-- Footer -->
   <footer class="bg-white py-3 footer" >
     <div class="container">
+      <hr>
       <div class="row">
         <div class="col-md-4">
           <h5>coinbaseclub</h5>
-          <p>+1 (888) 908-7000</p>
-          <p><a href="">support.coinbaseclub.com</a></p>
-          <p>© 2019 Coinbaseclub</p>
+          <p>+1 (888) 908-7000 <br>support@coinbaseclub.com <br>© 2019 Coinbaseclub</p>
         </div>
         <div class="col-md-2 text-color" >
           <h6>Products</h6><br>
           <a href="">Coinbaseclub</a>
           <a href="">Commerce</a><br>
           <a href="">Custody</a><br>
-          <a href="">Earn</a><br>
+
         </div>
         <div class="col-md-2 text-color">
          <h6>Learn</h6><br>
          <a href="">Buy Bitcoin</a><br>
           <a href="">Buy Bitcoin Cash</a><br>
           <a href="">Buy Ethereum</a><br>
-          <a href="">Buy Litecoin</a><br>
         </div>
         <div class="col-md-2 text-color">
          <h6> Company</h6><br>
          <a href="">About</a><br>
           <a href="">Affiliates</a><br>
           <a href="">Careers</a><br>
-          <a href="">Partners</a><br>
         </div>
         <div class="col-md-2 text-color">
           <h6> Social</h6><br>

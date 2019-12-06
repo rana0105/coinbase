@@ -34,9 +34,12 @@ class AgentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         $agent = User::with('agentfund')->findOrFail(Auth::user()->id);
+        //dd($agent);
         return view('agent.dashboard', compact('agent'));
 
     }
@@ -125,7 +128,9 @@ class AgentController extends Controller
                 ->whereDate('created_at', '<=', $to_date)
                 ->get();
         }else{
-            $clientFundhistory = AgenttoclientfundHistory::orderBy('created_at', 'desc')->get();
+            $clientFundhistory = AgenttoclientfundHistory::orderBy('created_at', 'desc')
+                               ->where('from_agent',Auth::user()->id)
+                               ->get();
         }
 
         return view('agent.pages.clientFundHistory', compact('clientFundhistory'));

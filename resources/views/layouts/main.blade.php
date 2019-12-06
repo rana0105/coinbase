@@ -7,7 +7,8 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
-	<title>{{ config('app.name', 'CoinBase Club') }}</title>
+  <title>{{ config('app.name', 'CoinBase Club') }}</title>
+  <link rel="icon" href="coinbase/img/0.PNG" type="image/gif" sizes="16x16">
 	<!-- Fonts -->
 	{{-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}

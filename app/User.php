@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'mobile', 'usercode', 'useragentcode', 'agentcode', 'country', 'roleid', 'profileimage', 'password',
+        'name', 'email', 'mobile', 'refcode','usercode', 'useragentcode', 'agentcode', 'country', 'roleid', 'profileimage', 'password',
     ];
 
     /**
@@ -41,7 +41,7 @@ class User extends Authenticatable
     // }
 
     public function agentfund(){
-        return $this->hasOne('App\Model\AdmintoAgentfund', 'id');
+        return $this->hasOne('App\Model\AdmintoAgentfund', 'to_agent');
     }
 
     public function clientfund(){

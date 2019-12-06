@@ -18,11 +18,17 @@
       @csrf
       <div class="row boxstyle">
         <div class="col-md-3">
-          <input type="text" name="key" class="form-control" placeholder="Input Client Name & Code">
+          <input type="text" name="key" class="form-control" placeholder="Enter Mobile or Ref Code">
         </div>
+        <div class="col-md-1">
+            <p style="margin-top:10px;">From</p>
+          </div>
         <div class="col-md-3">
           <input type="date" name="from_date" class="form-control" placeholder="From Date">
         </div>
+        <div class="col-md-1">
+            <p style="margin-top:10px;">To</p>
+          </div>
         <div class="col-md-3">
           <input type="date" name="to_date" class="form-control" placeholder="To Date">
         </div>
@@ -32,14 +38,16 @@
       </div>
     </form>
       <div class="row boxstyle" style="margin-top: 30px;">
+        <h4 style="color: black">Transaction History</h4> <br><br>
       <table class="table" >
-        <h4 style="color: green">Agent {{ Auth::user()->name }}'s Client Fund History</h4>
+       
+        {{-- {{ Auth::user()->id }} --}}
   <thead>
-    <tr>
+    <tr style="background-color:bisque;">
       <th>#</th>
-      <th>Client Name</th>
-      <th>Client Code</th>
-      <th>Client Mobile</th>
+      <th>Name</th>
+      <th>Mobile</th>
+      <th>Code</th>   
       <th>Amount</th>
       <th>Date</th>
     </tr>
@@ -49,10 +57,10 @@
       <tr>
         <td>{{ ++$key }}</td>
         <td>{{ $client->clientuserhistory->name }}</td>
-        <td>{{ $client->clientuserhistory->usercode }}</td>
         <td>{{ $client->clientuserhistory->mobile }}</td>
+        <td>{{ $client->clientuserhistory->usercode }}</td>
         <td>{{ $client->amount }}</td>
-        <td style="color:green;"><b>{{ date('d-M-Y', strtotime($client->created_at)) }}</b></td>
+        <td >{{ date('d-M-Y', strtotime($client->created_at)) }}</td>
       </tr>
       @endforeach
   </tbody>
@@ -63,47 +71,34 @@
     </div>
 
 <!-- Footer -->
+
   <footer class="bg-white py-3 footer" >
     <div class="container">
+        <hr>
       <div class="row">
         <div class="col-md-4">
           <h5>coinbaseclub</h5>
-          <p>+1 (888) 908-7000</p>
-          <p><a href="">support.coinbaseclub.com</a></p>
-          <p>© 2019 Coinbaseclub</p>
+          <p>+1 (888) 908-7000 <br>support@coinbaseclub.com <br>© 2019 Coinbaseclub </p>
+          {{-- <p><a href="">support.coinbaseclub.com</a></p>
+          <p></p> --}}
         </div>
         <div class="col-md-2 text-color" >
           <h6>Products</h6><br>
           <a href="">Coinbaseclub</a>
           <a href="">Commerce</a><br>
           <a href="">Custody</a><br>
-          <a href="">Earn</a><br>
-          <a href="">Pro</a><br>
-          <a href="">USD coin</a><br>
-          <a href="">Wallet</a><br>
-          <a href="">Ventures</a>
         </div>
         <div class="col-md-2 text-color">
          <h6>Learn</h6><br>
          <a href="">Buy Bitcoin</a><br>
           <a href="">Buy Bitcoin Cash</a><br>
           <a href="">Buy Ethereum</a><br>
-          <a href="">Buy Litecoin</a><br>
-          <a href="">Buy XRP</a><br>
-          <a href="">Support countries</a><br>
-          <a href="">Stayus</a><br>
-          <a href="">Ventures</a>
         </div>
         <div class="col-md-2 text-color">
          <h6> Company</h6><br>
          <a href="">About</a><br>
           <a href="">Affiliates</a><br>
           <a href="">Careers</a><br>
-          <a href="">Partners</a><br>
-          <a href="">Press</a><br>
-          <a href="">Legal & Privacy</a><br>
-          <a href="">Support</a><br>
-          <a href="">Ventures</a>
         </div>
         <div class="col-md-2 text-color">
           <h6> Social</h6><br>

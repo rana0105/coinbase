@@ -124,10 +124,16 @@
             <option value="2">Bet Win History</option>
           </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-1">
+          <p style="margin-top:7px;">From</p>
+          </div>
+        <div class="col-md-3">
           <input type="date" name="from_date" class="form-control" placeholder="From Date">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-1">
+            <p style="margin-top:7px;">To</p>
+            </div>
+        <div class="col-md-3">
           <input type="date" name="to_date" class="form-control" placeholder="To Date">
         </div>
         <div class="col-md-1">                
@@ -151,7 +157,7 @@
             @foreach($withdraws as $key => $with)
             <tr>
               <td>{{ ++$key }}</td>
-              <td style="color:green;">{{ $with->actualamount }}</td>
+              <td >{{ $with->actualamount }}</td>
               <td>
                 @if($with->status == 1)
                 <span style="color:green;">Approve</span>
@@ -159,7 +165,7 @@
                 <span style="color:red;">Pending</span>
                 @endif
               </td>
-              <td><b>{{ date('d-M-Y', strtotime($with->created_at)) }}</b></td>
+              <td>{{ date('d-M-Y', strtotime($with->created_at)) }}</td>
             </tr>
             @endforeach
           </tbody>
@@ -180,9 +186,9 @@
           @foreach($betWin as $win)
           <tr>
             <td>{{ $win->betWinInfo->name }}</td>
-            <td style="color:green;">{{ $win->bcount }}</td>
-            <td style="color:green;">{{ $win->bamount }}</td>
-            <td><b>{{ date('d-M-Y', strtotime($win->created_at)) }}</b></td>
+            <td >{{ $win->bcount }}</td>
+            <td >{{ $win->bamount }}</td>
+            <td>{{ date('d-M-Y', strtotime($win->created_at)) }}</td>
           </tr>
           @endforeach
         </tbody>
@@ -274,7 +280,7 @@
                   <span class="plus" id="plus_d">+</span>
                 </div>
                 <div class="div_style">
-                  <input type="password" name="password" class="form-control" placeholder="Input your password" required=""></br>
+                  <input type="password" name="password" class="form-control" placeholder="Enter your password" required=""></br>
                 </div>
                 <button class="btn btn-success btn-block">Buy</button>
                 </div>

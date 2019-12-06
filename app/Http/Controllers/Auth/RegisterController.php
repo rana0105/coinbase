@@ -64,12 +64,16 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+
+   
     protected function create(array $data)
     {
+     // dd($data);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'mobile' => $data['mobile'],
+            'refcode' => $data['refcode'],
             'usercode' => $data['usercode'],
             'useragentcode' => $data['useragentcode'],
             'country' => $data['country'],

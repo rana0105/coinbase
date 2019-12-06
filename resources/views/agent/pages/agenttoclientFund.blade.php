@@ -12,6 +12,7 @@
       <div class="col-md-3">
       </div>
       <div class="col-md-6 boxstyle">
+
         <form class="form-horizontal col-md-12"  form method="POST" action="{{ route('agent.to.client.store') }}" >
            @csrf
           <div class="form-group">
@@ -31,7 +32,7 @@
           </div>
           <div class="form-group">
             <label for="amount">Amount</label>
-            <input id="amount" type="number" class="form-control @error('amount') is-invalid @enderror" name="amount" value="{{ old('amount') }}" required autocomplete="amount" placeholder="Enter your amount">
+            <input id="amount" type="number" class="form-control @error('amount') is-invalid @enderror" name="amount" value="{{ old('amount') }}" min="0" required autocomplete="amount" placeholder="Enter amount">
                 
             @error('amount')
             <span class="invalid-feedback" role="alert">
@@ -39,7 +40,7 @@
             </span>
             @enderror
           </div>
-          <button  class="btn btn-primary my-4 btn-block " type="submit">Save</button>
+          <button  class="btn  my-4 btn-block " style="background-color:bisque;" type="submit">Save</button>
           
         </form>
       </div>

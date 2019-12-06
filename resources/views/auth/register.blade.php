@@ -4,6 +4,7 @@
  <div class="container" >
     <h3 class="h3style">Create your account</h3><br>
     <a class="h3style btn btn-info" href="{{ ('/') }}">Back Home</a>
+    <br>   <br>
     <div class="row col-md-12">
       <div class="col-md-3">
       </div>
@@ -63,13 +64,18 @@
               <strong>{{ $message }}</strong>
             </span>
             @enderror
+            @if ($message = Session::get('error'))
+                    <div class="alert alert-danger">
+                        <p>{{ $message }}</p>
+                      </div>
+             @endif
           </div>
           <div class="form-group">
             <label for="email">Agent Code</label>
             <select id="useragentcode" type="text" class="form-control @error('useragentcode') is-invalid @enderror" name="useragentcode" value="{{ old('useragentcode') }}" required autocomplete="useragentcode" autofocus>
               <option value="">--Select Agent Code--</option>
               @foreach($agentcode as $agent)
-              <option value="{{ $agent->agentcode }}">{{ $agent->mobile }} - {{ $agent->name }} - {{ $agent->agentcode }}</option>
+              <option value="{{ $agent->agentcode }}">{{ $agent->agentcode }} - {{ $agent->name }}</option>
               @endforeach
             </select>
                 
@@ -130,7 +136,6 @@
     </div><br>
     <p >Already have a Coinbaseclub account? <a href="{{ route('login') }}" >Log in</a> </p>
   </div>
-
 @endsection
 @section('style')
 <link href="{{ asset('coinbase/css/signup.css') }}" rel="stylesheet">
