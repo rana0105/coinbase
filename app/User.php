@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'mobile', 'usercode', 'useragentcode', 'agentcode', 'country', 'roleid', 'password',
+        'name', 'email', 'mobile', 'usercode', 'useragentcode', 'agentcode', 'country', 'roleid', 'profileimage', 'password',
     ];
 
     /**
@@ -35,4 +35,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // public function adminuser(){
+    //     return $this->belongsTo('App\Admin', 'from_admin');
+    // }
+
+    public function agentfund(){
+        return $this->hasOne('App\Model\AdmintoAgentfund', 'id');
+    }
+
+    public function clientfund(){
+        return $this->hasOne('App\Model\AgenttoClientfund', 'to_client');
+    }
 }

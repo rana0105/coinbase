@@ -38,9 +38,9 @@
       <form class="form-horizontal col-md-12"  method="POST" action="{{ route('login') }}">
         @csrf
         <div class="form-group">
-          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Input correct email Id">
+          <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus placeholder="Input correct mobile Id">
 
-          @error('email')
+          @error('mobile')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>

@@ -51,7 +51,7 @@
             <label for="usercode">Ref: Code</label>
             <input id="usercode" type="hidden" readonly="" class="form-control @error('usercode') is-invalid @enderror" name="usercode" value="{{ $usercode }}" required autocomplete="usercode" autofocus placeholder="Enter your ref: code">
 
-            <input id="refcode" type="text"  class="form-control @error('refcode') is-invalid @enderror" name="refcode" value="" required autocomplete="refcode" autofocus placeholder="Enter your ref: code">
+            <input id="refcode" type="text"  class="form-control @error('refcode') is-invalid @enderror" name="refcode" required value=""  autocomplete="refcode" autofocus placeholder="Enter your ref: code">
                 
             @error('usercode')
             <span class="invalid-feedback" role="alert">
@@ -69,7 +69,7 @@
             <select id="useragentcode" type="text" class="form-control @error('useragentcode') is-invalid @enderror" name="useragentcode" value="{{ old('useragentcode') }}" required autocomplete="useragentcode" autofocus>
               <option value="">--Select Agent Code--</option>
               @foreach($agentcode as $agent)
-              <option value="{{ $agent->agentcode }}">{{ $agent->agentcode }}</option>
+              <option value="{{ $agent->agentcode }}">{{ $agent->mobile }} - {{ $agent->name }} - {{ $agent->agentcode }}</option>
               @endforeach
             </select>
                 
@@ -81,7 +81,13 @@
           </div>
           <div class="form-group">
             <label for="email">Country</label>
-            <input id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus placeholder="Enter your country">
+            <select id="country" type="text" class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="country" autofocus>
+              <option value="">--Select Country--</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="India">India</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="Thailand">Thailand</option>
+            </select>
                 
                 @error('country')
                 <span class="invalid-feedback" role="alert">

@@ -9,17 +9,27 @@
       <li class="nav-item ">
         <a class="nav-link text-white" href="{{ route('agentcode.index') }}">{{ __('Agent') }}</a>
       </li>&nbsp;&nbsp;&nbsp;&nbsp;
-      {{-- <li class="nav-item">
-        <a class="nav-link text-white" href="#">Products</a>
+      <li class="nav-item ">
+        <a class="nav-link text-white" href="{{ route('beating') }}">{{ __('Beat') }}</a>
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;
+      <li class="nav-item ">
+        <a class="nav-link text-white" href="{{ route('admin.fund') }}">{{ __('Admin Fund') }}</a>
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;
+      <li class="nav-item ">
+        <a class="nav-link text-white" href="{{ route('show.agent.fund.transfer') }}">{{ __('Agent Fund Transfer') }}</a>
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          History
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ route('agent.fund.history') }}">Agent Transfer</a>
+          <a class="dropdown-item" href="{{ route('client.fund.history') }}">Client Transfer</a>
+          <a class="dropdown-item" href="{{ route('bet.hold.history') }}">Bet Hold</a>
+          <a class="dropdown-item" href="{{ route('bet.win.history') }}">Bet Win History</a>
+          <a class="dropdown-item" href="{{ route('withdraw.history') }}">Withdraw History</a>
+        </div>
       </li>
-      <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;
-      <li class="nav-item">
-        <a class="nav-link text-white " href="#">Company</a>
-      </li>
-      <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;
-      <li class="nav-item">
-        <a class="nav-link text-white" href="#">Earn cropty</a>
-      </li>&nbsp;&nbsp;&nbsp; --}}
     </ul>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow">
